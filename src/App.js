@@ -5,11 +5,11 @@ import { connect } from "react-redux"
 import Home from './components/Home'
 import TestPage from './components/TestPage'
 
-function App() {
+function App(props) {
   return (
     <div className='App'>
 
-    
+      <div>{props.testValue}</div>
 
       <Router>
         <Switch>
