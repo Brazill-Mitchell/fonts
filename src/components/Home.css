@@ -5,7 +5,7 @@
 /* featured sections */
 
 .featured-sections{
-    
+    color: gray;
 }
 .section-select{
     display: flex;
@@ -13,10 +13,19 @@
     width: 100%;
     padding: 0 10px;
 }
-.section-option{
+.section-option,.section-option-active{
     display: flex;
     flex-direction: row;
     flex: 1 0 25%;
+    color: gray;
+    transition: .3s color ease-in-out;
+    -webkit-transition: .3s color ease-in-out;
+    -moz-transition: .3s color ease-in-out;
+    -ms-transition: .3s color ease-in-out;
+    -o-transition: .3s color ease-in-out;
+}
+.section-option-active{
+    color: black;
 }
 .section-img{
     width: 25px;

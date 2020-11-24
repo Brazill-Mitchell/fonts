@@ -1,0 +1,8 @@
+#search-bar{
+    width: 50%;
+}
+.search-input{
+    width: 100%;
+    background: url(resources/searchIcon.png) no-repeat scroll 95% 50%;
+    background-size: 25px;
+}

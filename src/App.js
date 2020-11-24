@@ -7,7 +7,7 @@ import TestPage from './components/TestPage'
 
 function App(props) {
   return (
-    <div className='App'>
+    <div id='App'>
 
       <Router>
         <Switch>
@@ -26,7 +26,7 @@ function App(props) {
 }
 
 const mapStateToProps = state => ({
-  testValue: state.testValue
+  // testValue: state.testValue
 })
 
 export default connect(mapStateToProps)(App);

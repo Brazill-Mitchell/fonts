@@ -1,15 +1,17 @@
-import * as actions from './actions'
+import * as actions from './actions.js'
 // import { screenSizes } from "../../functions/responsive"
 
 const initialState = {
-    testValue: "test value"
+    currentPage: '/home',
+    currentSection: 'fonts'
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, act) => {
 
     switch(act.type){
-        case "testValue": return {...state.testValue}
+        case actions.CURRENT_PAGE: return {...state, currentPage:act.page}
+        case actions.CURRENT_SECTION: return {...state, currentSection:act.section}
         default: return state
     }
 }
