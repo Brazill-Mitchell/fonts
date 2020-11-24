@@ -9,8 +9,6 @@ function App(props) {
   return (
     <div className='App'>
 
-      <div>{props.testValue}</div>
-
       <Router>
         <Switch>
           <Route path='/' exact={true}>
