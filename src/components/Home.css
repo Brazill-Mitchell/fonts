@@ -16,10 +16,14 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .section-option,.section-option-active{
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: gray;
     transition: .3s color ease-in-out;
     -webkit-transition: .3s color ease-in-out;
@@ -32,10 +36,13 @@
 }
 
 .section-img{
+    flex: 1 0;
     width: 25px;
+    max-width: 30px;
 }
 .section-title{
-    
+    flex: 0 1;
+    line-height: 1;
 }
 
 /* Products */
@@ -108,8 +115,12 @@
 }
 @media only screen and (min-width: 500px) {
     .section-option,.section-option-active{
-      flex: 1 0 25%;
+      flex: 0 0 fit-content;
     }
+    .section-title{
+        white-space: nowrap;
+    }
+    
 } 
 @media only screen and (min-width: 700px) {
     .product{

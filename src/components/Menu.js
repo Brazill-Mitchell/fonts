@@ -2,25 +2,33 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setCurrentPage } from "./redux/actions";
 import { Link } from "react-router-dom";
+import { screenSizes } from "../responsive.js";
 import "./Menu.css";
-import Collapse from "react-bootstrap/Collapse";
+import Fade from "react-bootstrap/Fade";
 import hotDogMenu from "./resources/hotDogMenu.png";
 
 function Menu(props) {
   const [isMenuShown, handleMenu] = useState("false");
 
   return (
-    <div>
-      <div
-          className="menu-icon"
+    <div className="container menu" style={{ top: `${props.navHeight}px` }}>
+      {props.screenSize === screenSizes.MOBILE ? (
+        <div
+          className={isMenuShown 
+            ? "menu-icon icon-menu-in"
+            : "menu-icon icon-menu-out"
+          }
           onClick={() => {
             handleMenu(!isMenuShown);
           }}
         >
-          <img className="img" src={hotDogMenu} alt=""></img>
+          <img className="menu-icon-img" src={hotDogMenu} alt=""></img>
         </div>
-      <Collapse in={isMenuShown}>
-        <div className="menu" style={{ top: `${props.navHeight}px` }}>
+      ) : (
+        []
+      )}
+      <Fade in={isMenuShown}>
+        <div className="menu-content">
           <div
             className={
               props.currentPage === "/home" ? "menu-item-active" : "menu-item"
@@ -84,7 +92,7 @@ function Menu(props) {
             </Link>
           </div>
         </div>
-      </Collapse>
+      </Fade>
     </div>
   );
 }
@@ -92,6 +100,7 @@ function Menu(props) {
 const mapStateToProps = (state) => ({
   currentPage: state.currentPage,
   navHeight: state.navHeight,
+  screenSize: state.screenSize,
 });
 
 const mapDispatchToProps = { setCurrentPage };

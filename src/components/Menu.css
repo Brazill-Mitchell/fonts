@@ -1,24 +1,57 @@
 .menu{
+    /* position: fixed; */
     position: sticky;
-    flex: 1 0 15%;
+    flex: 0 0 15%;
     height: 50vh;
     max-height: 250px;
+    /* z-index: 100; */
+    background-color: white;
+}
+
+.menu-icon{
+    position: absolute;
+    top: 5%;
+    right: 0;
+    z-index: 100;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -ms-transition: .3s all ease-in-out;
+    -o-transition: .3s all ease-in-out;
+}
+.icon-menu-in{
+    transform: rotateZ(180deg);
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
+}
+.icon-menu-out{
+    transform: rotateZ(0);
+    -webkit-transform: rotateZ(0);
+    -moz-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+}
+.menu-content{
+    height: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.menu-icon{
-    position: absolute;
+.menu-icon-img{
     width: 25px;
     height: 25px;
     z-index: 100;
 }
 .menu-item,.menu-item-active{
-    transition: .2s all ease-in-out;
-    -webkit-transition: .2s all ease-in-out;
-    -moz-transition: .2s all ease-in-out;
-    -ms-transition: .2s all ease-in-out;
-    -o-transition: .2s all ease-in-out;
+    transition: .1s all ease-in-out;
+    -webkit-transition: .1s all ease-in-out;
+    -moz-transition: .1s all ease-in-out;
+    -ms-transition: .1s all ease-in-out;
+    -o-transition: .1s all ease-in-out;
     color: gray;
 }
 .menu-item-active{
