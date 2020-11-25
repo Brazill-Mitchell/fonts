@@ -1,14 +1,32 @@
 import './App.css';
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux"
+import { checkScreenSize } from './responsive.js'
+import { setScreenSize } from './components/redux/actions.js'
 
 import Home from './components/Home'
 import TestPage from './components/TestPage'
 
 function App(props) {
+
+  function setScreenSize(){
+    const screen = checkScreenSize();
+    if (screen !== props.screenSize) {
+        props.setScreenSize(screen);
+    }
+  };
+
+  useEffect(()=>{
+    window.addEventListener('resize',setScreenSize)
+  },[props.screenSize])
+  
+  useEffect(()=>{
+    setScreenSize()
+  },[])
+
   return (
     <div id='App'>
-
       <Router>
         <Switch>
           <Route path='/' exact={true}>
@@ -26,7 +44,10 @@ function App(props) {
 }
 
 const mapStateToProps = state => ({
-  // testValue: state.testValue
+  screenSize: state.screenSize,
+  navHeight: state.navHeight
 })
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = { setScreenSize }
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

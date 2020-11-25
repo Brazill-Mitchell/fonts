@@ -1,15 +1,16 @@
 .navbar{
-    
+    width: 100vw;
 }
 .guest-name{
-    font-size: x-large;
+    font-size: xx-large;
     font-family: Poppins-Black;
     font-weight: 700;
+    cursor: pointer;
 }
 .cart-img{
     
 }
 .logo-home{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }

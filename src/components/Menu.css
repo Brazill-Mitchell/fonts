@@ -1,9 +1,17 @@
 .menu{
+    position: sticky;
     flex: 1 0 15%;
     height: 50vh;
+    max-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+.menu-icon{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 100;
 }
 .menu-item,.menu-item-active{
     transition: .2s all ease-in-out;
