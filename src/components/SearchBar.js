@@ -1,26 +1,41 @@
 import React from "react";
 import { connect } from "react-redux";
-import { screenSizes } from '../responsive.js'
+import { screenSizes } from "../responsive.js";
 import "./SearchBar.css";
+import searchIcon from "./resources/searchIcon.png";
 
 function SearchBar(props) {
+  function handleClick() {}
+
   return (
-    <div id="search-bar">
+    <div
+      id="search-container"
+      className="mt-2"
+      style={
+        props.screenSize !== screenSizes.MOBILE
+          ? { flex: "0 0 40%" }
+          : { flex: "0 0 60%" }
+      }
+    >
+      <img className="search-icon" src={searchIcon} alt=""></img>
       <input
         class="form-control search-input"
         type="text"
-        placeholder={props.screenSize === screenSizes.MOBILE || props.screenSize === screenSizes.TABLET
-            ? 'Search'
+        placeholder={
+          props.screenSize === screenSizes.MOBILE ||
+          props.screenSize === screenSizes.TABLET
+            ? "Search"
             : 'Search "svg","cut design",etc...'
         }
+        onClick={handleClick}
         aria-label="Search"
       />
     </div>
   );
 }
 
-const mapStateToProps = state => ({
-    screenSize: state.screenSize
-})
+const mapStateToProps = (state) => ({
+  screenSize: state.screenSize,
+});
 
-export default connect(mapStateToProps)(SearchBar)
+export default connect(mapStateToProps)(SearchBar);

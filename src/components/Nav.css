@@ -1,7 +1,10 @@
 .navbar{
+    display: flex;
+    flex-direction: row;
     width: 100vw;
 }
 .guest-name{
+    flex: .5 0;
     font-size: xx-large;
     font-family: Poppins-Black;
     font-weight: 700;
@@ -11,6 +14,10 @@
     
 }
 .logo-home{
+    flex: 1 0 20%;
     width: 50px;
     height: 50px;
+}
+.register{
+    
 }

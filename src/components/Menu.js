@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { setCurrentPage } from "./redux/actions";
 import { Link } from "react-router-dom";
@@ -8,18 +8,55 @@ import Fade from "react-bootstrap/Fade";
 import hotDogMenu from "./resources/hotDogMenu.png";
 
 function Menu(props) {
-  const [isMenuShown, handleMenu] = useState("false");
+  const [isMenuShown, toggleMenu] = useState("false");
+
+  function handleMenu() {
+    if (props.screenSize !== screenSizes.MOBILE) {
+      if (isMenuShown === false) {
+        toggleMenu(true);
+      }
+    }else{
+      toggleMenu(false)
+    }
+  }
+
+  useEffect(() => {
+    handleMenu();
+  }, [props.screenSize]);
 
   return (
-    <div className="container menu" style={{ top: `${props.navHeight}px` }}>
+    <div className='menu-container sticky-top'
+    style={
+        props.screenSize !== screenSizes.MOBILE
+          ? {top:`${props.navHeight}px`,position:'sticky'}
+          : {top:`${props.navHeight / 2}px`,position:'absolute'}
+    }
+    >
+      <div
+      className={
+        props.screenSize === screenSizes.MOBILE
+          ? isMenuShown
+            ? "menu bg-white"
+            : "menu"
+          : " container menu"
+      }
+      style={{
+        top:
+          props.screenSize !== screenSizes.MOBILE
+            ? `${props.navHeight}px`
+            : `${props.navHeight}px`,
+        position: `${
+          props.screenSize !== screenSizes.MOBILE ? "sticky" : "fixed"
+        }`,
+      }}
+    >
       {props.screenSize === screenSizes.MOBILE ? (
         <div
-          className={isMenuShown 
-            ? "menu-icon icon-menu-in"
-            : "menu-icon icon-menu-out"
+          className={
+            isMenuShown ? "menu-icon icon-menu-in" : "menu-icon icon-menu-out"
           }
           onClick={() => {
-            handleMenu(!isMenuShown);
+            toggleMenu(!isMenuShown);
           }}
         >
           <img className="menu-icon-img" src={hotDogMenu} alt=""></img>
@@ -93,6 +130,7 @@ function Menu(props) {
           </div>
         </div>
       </Fade>
+    </div>
     </div>
   );
 }

@@ -1,17 +1,24 @@
+.menu-container{
+    height: 100%;
+    z-index: 100;
+    top: 0;
+}
+
 .menu{
     /* position: fixed; */
-    position: sticky;
+    z-index: 100;
+    /* position: sticky; */
     flex: 0 0 15%;
     height: 50vh;
     max-height: 250px;
     /* z-index: 100; */
-    background-color: white;
+    /* background-color: white; */
 }
 
 .menu-icon{
     position: absolute;
     top: 5%;
-    right: 0;
+    /* right: 0; */
     z-index: 100;
     cursor: pointer;
     transition: .3s all ease-in-out;
@@ -34,17 +41,19 @@
     -ms-transform: rotateZ(0);
     -o-transform: rotateZ(0);
 }
+.menu-icon-img{
+    width: 25px;
+    height: 25px;
+    z-index: 100;
+}
 .menu-content{
+    margin-left: 30px;
     height: 100%;
     width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-.menu-icon-img{
-    width: 25px;
-    height: 25px;
-    z-index: 100;
+    padding-right: 5px;
 }
 .menu-item,.menu-item-active{
     transition: .1s all ease-in-out;
@@ -56,4 +65,10 @@
 }
 .menu-item-active{
     color: black;
+}
+
+@media screen and (max-width: 500px){
+    .menu{
+        margin-top: 20px;
+    }
 }

@@ -25,7 +25,12 @@ function Home(props) {
         {/* products area */}
         <div className="products-area d-flex flex-column">
           {/* featured sections */}
-          <div className="featured-sections" style={{top:`${props.navHeight}px`}}>
+          <div className="featured-sections-container" style={
+            props.screenSize !== screenSizes.MOBILE
+              ? {top:`${props.navHeight}px`}
+              : {top:'0'}
+          }>
+            <div className='featured-sections'>
             <small className="text-muted font-weight-bold ml-3" style={{pointerEvents:'none'}}>
               Featured Sections
             </small>
@@ -99,6 +104,7 @@ function Home(props) {
                 </Link>
               </div>
             </div>
+            </div>
           </div>
 
           {/* products */}
@@ -122,7 +128,8 @@ function Home(props) {
 
 const mapStateToProps = (state) => ({
   currentSection: state.currentSection,
-  navHeight: state.navHeight
+  navHeight: state.navHeight,
+  screenSize: state.screenSize
 });
 
 const mapDispatchToProps = { setCurrentSection };

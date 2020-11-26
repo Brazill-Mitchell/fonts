@@ -1,8 +1,25 @@
-#search-bar{
-    width: 50%;
+#search-container{
+    position: relative;
 }
 .search-input{
-    width: 100%;
-    background: url(resources/searchIcon.png) no-repeat scroll 95% 50%;
-    background-size: 25px;
+    width: 20px;
+}
+.search-icon{
+    position: absolute;
+    z-index: 10;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    cursor: pointer;
+}
+@media screen and (max-width: 900px){
+    #search-bar{
+        flex: 0 0 50%;
+    }
 }
