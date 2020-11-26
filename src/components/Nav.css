@@ -5,8 +5,8 @@
 }
 .guest-name{
     flex: .5 0;
+    font-family: Poppins-ExtraBold;
     font-size: xx-large;
-    font-family: Poppins-Black;
     font-weight: 700;
     cursor: pointer;
 }

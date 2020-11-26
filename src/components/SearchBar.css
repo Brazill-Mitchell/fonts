@@ -18,8 +18,3 @@
     -o-transform: translateY(-50%);
     cursor: pointer;
 }
-@media screen and (max-width: 900px){
-    #search-bar{
-        flex: 0 0 50%;
-    }
-}

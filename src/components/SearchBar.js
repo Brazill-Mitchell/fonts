@@ -14,7 +14,7 @@ function SearchBar(props) {
       style={
         props.screenSize !== screenSizes.MOBILE
           ? { flex: "0 0 40%" }
-          : { flex: "0 0 60%" }
+          : { flex: "0 0 80%", margin: "0 auto" }
       }
     >
       <img className="search-icon" src={searchIcon} alt=""></img>
