@@ -15,8 +15,8 @@ function Menu(props) {
       if (isMenuShown === false) {
         toggleMenu(true);
       }
-    }else{
-      toggleMenu(false)
+    } else {
+      toggleMenu(false);
     }
   }
 
@@ -25,112 +25,135 @@ function Menu(props) {
   }, [props.screenSize]);
 
   return (
-    <div className='menu-container sticky-top'
-    style={
+    <div
+      className="menu-container sticky-top"
+      style={
         props.screenSize !== screenSizes.MOBILE
-          ? {top:`${props.navHeight}px`,position:'sticky'}
-          : {top:`${props.navHeight / 2}px`,position:'absolute'}
-    }
+          ? { top: `${props.navHeight}px`, position: "sticky" }
+          : { top: `${props.navHeight / 2}px`, position: "absolute" }
+      }
     >
       <div
-      className={
-        props.screenSize === screenSizes.MOBILE
-          ? isMenuShown
-            ? "menu bg-white"
-            : "menu"
-          : " container menu"
-      }
-      style={{
-        top:
-          props.screenSize !== screenSizes.MOBILE
-            ? `${props.navHeight}px`
-            : `${props.navHeight}px`,
-        position: `${
-          props.screenSize !== screenSizes.MOBILE ? "sticky" : "fixed"
-        }`,
-      }}
-    >
-      {props.screenSize === screenSizes.MOBILE ? (
-        <div
-          className={
-            isMenuShown ? "menu-icon icon-menu-in" : "menu-icon icon-menu-out"
-          }
-          onClick={() => {
-            toggleMenu(!isMenuShown);
-          }}
-        >
-          <img className="menu-icon-img" src={hotDogMenu} alt=""></img>
-        </div>
-      ) : (
-        []
-      )}
-      <Fade in={isMenuShown}>
-        <div className="menu-content">
+        className={
+          props.screenSize === screenSizes.MOBILE
+            ? isMenuShown
+              ? "menu bg-white"
+              : "menu"
+            : " container menu"
+        }
+        style={{
+          top:
+            props.screenSize !== screenSizes.MOBILE
+              ? `${props.navHeight}px`
+              : `${props.navHeight}px`,
+          position: `${
+            props.screenSize !== screenSizes.MOBILE ? "sticky" : "fixed"
+          }`,
+        }}
+      >
+        {props.screenSize === screenSizes.MOBILE ? (
           <div
             className={
-              props.currentPage === "/home" ? "menu-item-active" : "menu-item"
+              isMenuShown ? "menu-icon icon-menu-in" : "menu-icon icon-menu-out"
             }
             onClick={() => {
-              props.setCurrentPage("/home");
+              toggleMenu(!isMenuShown);
             }}
           >
-            <Link to="">
-              <span>Home</span>
-            </Link>
+            <img className="menu-icon-img" src={hotDogMenu} alt=""></img>
           </div>
-          <div
-            className={
-              props.currentPage === "/sell" ? "menu-item-active" : "menu-item"
-            }
-            onClick={() => {
-              props.setCurrentPage("/sell");
-            }}
-          >
-            <Link to="">
-              <span>Sell</span>
-            </Link>
+        ) : (
+          []
+        )}
+        <Fade in={isMenuShown}>
+          <div className="menu-content">
+            <div
+              className={
+                props.currentPage === "/home" ? "menu-item-active" : "menu-item"
+              }
+              onClick={() => {
+                props.setCurrentPage("/home");
+              }}
+            >
+              <Link to="">
+                <span>Home</span>
+              </Link>
+            </div>
+            <div
+              className={
+                props.currentPage === "/sell" ? "menu-item-active" : "menu-item"
+              }
+              onClick={() => {
+                props.setCurrentPage("/sell");
+              }}
+            >
+              <Link to="">
+                <span>Sell</span>
+              </Link>
+            </div>
+            <div
+              className={
+                props.currentPage === "/shops"
+                  ? "menu-item-active"
+                  : "menu-item"
+              }
+              onClick={() => {
+                props.setCurrentPage("/shops");
+              }}
+            >
+              <Link to="">
+                <span>Shops</span>
+              </Link>
+            </div>
+            <div
+              className={
+                props.currentPage === "/settings"
+                  ? "menu-item-active"
+                  : "menu-item"
+              }
+              onClick={() => {
+                props.setCurrentPage("/settings");
+              }}
+            >
+              <Link to="">
+                <span>Settings</span>
+              </Link>
+            </div>
+            {props.screenSize === screenSizes.MOBILE ? (
+              <div
+                className={
+                  props.currentPage === "/register"
+                    ? "menu-item-active"
+                    : "menu-item"
+                }
+                onClick={() => {
+                  props.setCurrentPage("/register");
+                }}
+              >
+                <Link to="">
+                  <span>Register</span>
+                </Link>
+              </div>
+            ) : (
+              []
+            )}
+            <div
+              className={
+                props.currentPage === "/login"
+                  ? "menu-item-active"
+                  : "menu-item"
+              }
+              onClick={() => {
+                props.setCurrentPage("/login");
+              }}
+            >
+              <Link to="">
+                <span>Log in</span>
+              </Link>
+            </div>
           </div>
-          <div
-            className={
-              props.currentPage === "/shops" ? "menu-item-active" : "menu-item"
-            }
-            onClick={() => {
-              props.setCurrentPage("/shops");
-            }}
-          >
-            <Link to="">
-              <span>Shops</span>
-            </Link>
-          </div>
-          <div
-            className={
-              props.currentPage === "/settings"
-                ? "menu-item-active"
-                : "menu-item"
-            }
-            onClick={() => {
-              props.setCurrentPage("/settings");
-            }}
-          >
-            <Link to="">
-              <span>Settings</span>
-            </Link>
-          </div>
-          <div
-            className={
-              props.currentPage === "/login" ? "menu-item-active" : "menu-item"
-            }
-            onClick={() => {
-              props.setCurrentPage("/login");
-            }}
-          >
-            <Link to="">
-              <span>Log in</span>
-            </Link>
-          </div>
-        </div>
-      </Fade>
-    </div>
+        </Fade>
+      </div>
     </div>
   );
 }
