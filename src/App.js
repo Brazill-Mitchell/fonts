@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { connect } from "react-redux"
 import { checkScreenSize } from './responsive.js'
 import { setScreenSize } from './components/redux/actions.js'
