@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/fonts/static/css/main.dbc00fc2.chunk.css",
-    "main.js": "/fonts/static/js/main.c5e4395d.chunk.js",
-    "main.js.map": "/fonts/static/js/main.c5e4395d.chunk.js.map",
+    "main.css": "/fonts/static/css/main.11933ad3.chunk.css",
+    "main.js": "/fonts/static/js/main.6a53b1b7.chunk.js",
+    "main.js.map": "/fonts/static/js/main.6a53b1b7.chunk.js.map",
     "runtime-main.js": "/fonts/static/js/runtime-main.4aa9c456.js",
     "runtime-main.js.map": "/fonts/static/js/runtime-main.4aa9c456.js.map",
     "static/css/2.1a02f21c.chunk.css": "/fonts/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.abf314ad.chunk.js": "/fonts/static/js/2.abf314ad.chunk.js",
-    "static/js/2.abf314ad.chunk.js.map": "/fonts/static/js/2.abf314ad.chunk.js.map",
+    "static/js/2.db822bdf.chunk.js": "/fonts/static/js/2.db822bdf.chunk.js",
+    "static/js/2.db822bdf.chunk.js.map": "/fonts/static/js/2.db822bdf.chunk.js.map",
     "static/js/3.6efe2d70.chunk.js": "/fonts/static/js/3.6efe2d70.chunk.js",
     "static/js/3.6efe2d70.chunk.js.map": "/fonts/static/js/3.6efe2d70.chunk.js.map",
     "index.html": "/fonts/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/fonts/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.dbc00fc2.chunk.css.map": "/fonts/static/css/main.dbc00fc2.chunk.css.map",
-    "static/js/2.abf314ad.chunk.js.LICENSE.txt": "/fonts/static/js/2.abf314ad.chunk.js.LICENSE.txt",
+    "static/css/main.11933ad3.chunk.css.map": "/fonts/static/css/main.11933ad3.chunk.css.map",
+    "static/js/2.db822bdf.chunk.js.LICENSE.txt": "/fonts/static/js/2.db822bdf.chunk.js.LICENSE.txt",
     "static/media/birthday.d75142fb.svg": "/fonts/static/media/birthday.d75142fb.svg",
-    "static/media/culogo.84c9f3dd.svg": "/fonts/static/media/culogo.84c9f3dd.svg",
+    "static/media/culogo.7f9387c9.svg": "/fonts/static/media/culogo.7f9387c9.svg",
     "static/media/expand.0d44e2f3.svg": "/fonts/static/media/expand.0d44e2f3.svg",
     "static/media/fontSize.8d3f3ea4.svg": "/fonts/static/media/fontSize.8d3f3ea4.svg",
     "static/media/hotDogMenu.c7866fb5.png": "/fonts/static/media/hotDogMenu.c7866fb5.png",
@@ -29,8 +29,8 @@
   "entrypoints": [
     "static/js/runtime-main.4aa9c456.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.abf314ad.chunk.js",
-    "static/css/main.dbc00fc2.chunk.css",
-    "static/js/main.c5e4395d.chunk.js"
+    "static/js/2.db822bdf.chunk.js",
+    "static/css/main.11933ad3.chunk.css",
+    "static/js/main.6a53b1b7.chunk.js"
   ]
 }
