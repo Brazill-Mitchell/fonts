@@ -45,7 +45,7 @@ function Menu(props) {
           top:
             props.screenSize !== screenSizes.MOBILE
               ? `${props.navHeight}px`
-              : `${props.navHeight}px`,
+              : `${props.navHeight / 1.5}px`,
           position: `${
             props.screenSize !== screenSizes.MOBILE ? "sticky" : "fixed"
           }`,

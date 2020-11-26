@@ -54,11 +54,7 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img
-                        className="section-img"
-                        src={fontSizeImg}
-                        alt=""
-                      ></img>
+                      <img className="section-img" src={fontSizeImg} alt="" />
                       <div className="section-title">Fonts</div>
                     </div>
                   </Link>
@@ -75,7 +71,7 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img className="section-img" src={expandImg} alt=""></img>
+                      <img className="section-img" src={expandImg} alt="" />
                       <div className="section-title">SVG Designs</div>
                     </div>
                   </Link>
@@ -92,7 +88,7 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img className="section-img" src={treeImg} alt=""></img>
+                      <img className="section-img" src={treeImg} alt="" />
                       <div className="section-title">Holiday</div>
                     </div>
                   </Link>
@@ -109,11 +105,7 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img
-                        className="section-img"
-                        src={birthdayImg}
-                        alt=""
-                      ></img>
+                      <img className="section-img" src={birthdayImg} alt="" />
                       <div className="section-title">Birthday</div>
                     </div>
                   </Link>
@@ -128,11 +120,7 @@ function Home(props) {
               return (
                 <div className="product mb-3" key={index}>
                   <div className="product-image">
-                    <img
-                      className="img rounded"
-                      src={product.image}
-                      alt=""
-                    ></img>
+                    <img className="img rounded" src={product.image} alt="" />
                   </div>
                   <div className="product-title">{product.title}</div>
                 </div>
