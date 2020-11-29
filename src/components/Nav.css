@@ -5,9 +5,9 @@
 }
 .guest-name{
     flex: .5 0;
-    font-family: Poppins-ExtraBold;
+    font-family: 'Poppins', sans-serif;
     font-size: xx-large;
-    font-weight: 700;
+    font-weight: 900;
     cursor: pointer;
 }
 .cart-img{

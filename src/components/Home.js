@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect,useRef } from "react";
 import { connect } from "react-redux";
 import { screenSizes } from "../responsive.js";
 import { setCurrentSection } from "./redux/actions";
@@ -15,6 +15,14 @@ import {
 } from "./resources/tempResources";
 
 function Home(props) {
+
+  const[featureStart,setFeatureStart] = useState('0')
+  const fontImageRef = useRef(null)
+  useEffect(()=>{
+    // setFeatureStart(fontImageRef)
+    setFeatureStart(fontImageRef.current.x - (fontImageRef.current.width/2))
+  },[])
+
   return (
     <div>
       <Nav />
@@ -37,7 +45,7 @@ function Home(props) {
               <small
                 id="title-featured"
                 className="text-muted font-weight-bold"
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: "none", marginLeft:`${featureStart}px`}}
               >
                 Featured Sections
               </small>
@@ -54,7 +62,7 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img className="section-img" src={fontSizeImg} alt="" />
+                      <img className="section-img" ref={fontImageRef} src={fontSizeImg} alt="" />
                       <div className="section-title">Fonts</div>
                     </div>
                   </Link>

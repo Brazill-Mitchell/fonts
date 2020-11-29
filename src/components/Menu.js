@@ -65,7 +65,7 @@ function Menu(props) {
         ) : (
           []
         )}
-        <Fade in={isMenuShown}>
+      <Fade in={isMenuShown} unmountOnExit={true} mountOnEnter={true}>
           <div className="menu-content">
             <div
               className={

@@ -59,9 +59,12 @@ function Nav(props) {
           </Link>
           <div className="guest-name">Guest</div>
           <Link to="">
-            <img className="cart-img" src={shoppingCartImg} alt=""></img>
+            <span>Register</span>
           </Link>
           <SearchBar />
+          <Link to="">
+            <img className="cart-img" src={shoppingCartImg} alt=""></img>
+          </Link>
           {
             props.screenSize !== screenSizes.MOBILE
               ? <Link to="">
