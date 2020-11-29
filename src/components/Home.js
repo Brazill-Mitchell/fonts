@@ -19,8 +19,7 @@ function Home(props) {
   const[featureStart,setFeatureStart] = useState('0')
   const fontImageRef = useRef(null)
   useEffect(()=>{
-    // setFeatureStart(fontImageRef)
-    setFeatureStart(fontImageRef.current.x - (fontImageRef.current.width/2))
+    setFeatureStart(fontImageRef.current.offsetLeft - (fontImageRef.current.width/2))
   },[])
 
   return (
@@ -45,7 +44,10 @@ function Home(props) {
               <small
                 id="title-featured"
                 className="text-muted font-weight-bold"
-                style={{ pointerEvents: "none", marginLeft:`${featureStart}px`}}
+                style={{ pointerEvents: "none", marginLeft: props.screenSize === screenSizes.MOBILE
+                  ? `${featureStart}px`
+                  : '50px'
+              }}
               >
                 Featured Sections
               </small>
