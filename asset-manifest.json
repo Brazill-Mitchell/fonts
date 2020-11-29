@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/fonts/static/css/main.baf5aaa6.chunk.css",
-    "main.js": "/fonts/static/js/main.dd12454c.chunk.js",
-    "main.js.map": "/fonts/static/js/main.dd12454c.chunk.js.map",
+    "main.css": "/fonts/static/css/main.adeba89a.chunk.css",
+    "main.js": "/fonts/static/js/main.bcda8c54.chunk.js",
+    "main.js.map": "/fonts/static/js/main.bcda8c54.chunk.js.map",
     "runtime-main.js": "/fonts/static/js/runtime-main.4aa9c456.js",
     "runtime-main.js.map": "/fonts/static/js/runtime-main.4aa9c456.js.map",
     "static/css/2.1a02f21c.chunk.css": "/fonts/static/css/2.1a02f21c.chunk.css",
-    "static/js/2.da92922a.chunk.js": "/fonts/static/js/2.da92922a.chunk.js",
-    "static/js/2.da92922a.chunk.js.map": "/fonts/static/js/2.da92922a.chunk.js.map",
+    "static/js/2.4415fd6d.chunk.js": "/fonts/static/js/2.4415fd6d.chunk.js",
+    "static/js/2.4415fd6d.chunk.js.map": "/fonts/static/js/2.4415fd6d.chunk.js.map",
     "static/js/3.6efe2d70.chunk.js": "/fonts/static/js/3.6efe2d70.chunk.js",
     "static/js/3.6efe2d70.chunk.js.map": "/fonts/static/js/3.6efe2d70.chunk.js.map",
     "index.html": "/fonts/index.html",
     "static/css/2.1a02f21c.chunk.css.map": "/fonts/static/css/2.1a02f21c.chunk.css.map",
-    "static/css/main.baf5aaa6.chunk.css.map": "/fonts/static/css/main.baf5aaa6.chunk.css.map",
-    "static/js/2.da92922a.chunk.js.LICENSE.txt": "/fonts/static/js/2.da92922a.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/fonts/static/media/Poppins-Black.eacee5bb.ttf",
+    "static/css/main.adeba89a.chunk.css.map": "/fonts/static/css/main.adeba89a.chunk.css.map",
+    "static/js/2.4415fd6d.chunk.js.LICENSE.txt": "/fonts/static/js/2.4415fd6d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/fonts/static/media/Poppins-Black.eacee5bb.ttf",
     "static/media/birthday.d75142fb.svg": "/fonts/static/media/birthday.d75142fb.svg",
     "static/media/culogo.7f9387c9.svg": "/fonts/static/media/culogo.7f9387c9.svg",
     "static/media/expand.0d44e2f3.svg": "/fonts/static/media/expand.0d44e2f3.svg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.4aa9c456.js",
     "static/css/2.1a02f21c.chunk.css",
-    "static/js/2.da92922a.chunk.js",
-    "static/css/main.baf5aaa6.chunk.css",
-    "static/js/main.dd12454c.chunk.js"
+    "static/js/2.4415fd6d.chunk.js",
+    "static/css/main.adeba89a.chunk.css",
+    "static/js/main.bcda8c54.chunk.js"
   ]
 }
