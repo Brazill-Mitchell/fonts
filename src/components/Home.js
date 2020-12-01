@@ -63,9 +63,13 @@ function Home(props) {
         <div className="products-area d-flex flex-column">
           {/* featured sections */}
           <div
-            className={isScrolling
-              ? "featured-sections-container pb-2 featured-sections-scrolling"
-              : "featured-sections-container pb-2"
+            className={props.screenSize !== screenSizes.MOBILE
+              ? isScrolling
+                ? "featured-sections-container pb-2 featured-sections-scrolling"
+                : "featured-sections-container pb-2"
+              : isScrolling
+                ? "featured-sections-container featured-sections-scrolling"
+                : "featured-sections-container"
             }
             style={
               props.screenSize !== screenSizes.MOBILE
