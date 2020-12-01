@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { screenSizes } from "../responsive.js";
 import { setCurrentSection } from "./redux/actions";
@@ -16,16 +16,46 @@ import {
 
 function Home(props) {
 
-  const[featureStart,setFeatureStart] = useState('0')
-  const fontImageRef = useRef(null)
-  useEffect(()=>{
-    setFeatureStart(fontImageRef.current.offsetLeft - (fontImageRef.current.width/2))
-  },[])
+  const[isScrolling,setIsScrolling] = useState(false)
+
+  // Scroll Shadow Animation
+  // let last_known_scroll_position = 0;
+
+  // function doSomething(scroll_pos) {
+  //  console.log(last_known_scroll_position)
+  // }
+  
+  let scrollTimer = null
+
+  document.addEventListener("scroll", function (e) {
+    // last_known_scroll_position = window.scrollY;
+
+    if (!isScrolling) {
+      window.requestAnimationFrame(function () {
+        // doSomething(last_known_scroll_position);
+        setIsScrolling(true);
+      });
+      if(scrollTimer !== null){
+        clearTimeout(scrollTimer)
+      }
+
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false)
+      }, 10);
+    }
+  },false);
+
+  const [featureStart, setFeatureStart] = useState("0");
+  const fontImageRef = useRef(null);
+  useEffect(() => {
+    setFeatureStart(
+      fontImageRef.current.offsetLeft - fontImageRef.current.width / 2
+    );
+  }, []);
 
   return (
     <div>
       <Nav />
-
       {/* body */}
       <div className="d-flex flex-row container-fluid w-100">
         <Menu />
@@ -33,7 +63,10 @@ function Home(props) {
         <div className="products-area d-flex flex-column">
           {/* featured sections */}
           <div
-            className="featured-sections-container"
+            className={isScrolling
+              ? "featured-sections-container pb-2 featured-sections-scrolling"
+              : "featured-sections-container pb-2"
+            }
             style={
               props.screenSize !== screenSizes.MOBILE
                 ? { top: `${props.navHeight}px` }
@@ -44,10 +77,13 @@ function Home(props) {
               <small
                 id="title-featured"
                 className="text-muted font-weight-bold"
-                style={{ pointerEvents: "none", marginLeft: props.screenSize === screenSizes.MOBILE
-                  ? `${featureStart}px`
-                  : '50px'
-              }}
+                style={{
+                  pointerEvents: "none",
+                  marginLeft:
+                    props.screenSize === screenSizes.MOBILE
+                      ? `${featureStart}px`
+                      : "50px",
+                }}
               >
                 Featured Sections
               </small>
@@ -64,7 +100,12 @@ function Home(props) {
                 >
                   <Link to="">
                     <div className="d-flex flex-row">
-                      <img className="section-img" ref={fontImageRef} src={fontSizeImg} alt="" />
+                      <img
+                        className="section-img"
+                        ref={fontImageRef}
+                        src={fontSizeImg}
+                        alt=""
+                      />
                       <div className="section-title">Fonts</div>
                     </div>
                   </Link>

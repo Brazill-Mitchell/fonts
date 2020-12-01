@@ -5,16 +5,36 @@
 
 /* Featured Sections */
 
-.featured-sections-container{
+.featured-sections-container,.featured-sections-scrolling{
     margin-top: 25px;
     position: sticky;
     display: flex;
     justify-content: space-around;
     color: gray;
     width: 100%;
-    /* max-width: 900px; */
     background-color: white;
-    box-shadow: 0 5px 10px -8px #888;
+    transition: .25s all ease-in-out;
+    -webkit-transition: .25s all ease-in-out;
+    -moz-transition: .25s all ease-in-out;
+    -ms-transition: .25s all ease-in-out;
+    -o-transition: .25s all ease-in-out;
+}
+
+.featured-sections-container::after,.featured-sections-scrolling::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px -10px #888;
+    transition: opacity 0.3s ease-in-out;
+}
+.featured-sections-container::after{
+    opacity: 0;
+}
+.featured-sections-scrolling::after{
+    opacity: 1;
 }
 .featured-sections{
     
