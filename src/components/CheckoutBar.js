@@ -8,8 +8,8 @@ import "./CheckoutBar.css";
 
 function Home(props) {
   return (
-    <Link to="">
-      <div className="checkout-bar container-fluid w-100">
+    <div className="checkout-bar container-fluid w-100">
+      <Link to="">
         <div className="count-and-cart">
           <div className="checkout-bar-item-count">{props.checkoutCount}</div>
           <div className="checkout-bar-image">
@@ -17,8 +17,8 @@ function Home(props) {
           </div>
         </div>
         <div className="checkout-bar-title">Checkout</div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

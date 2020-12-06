@@ -19,13 +19,13 @@ function SearchBar(props) {
     >
       <img className="search-icon" src={searchIcon} alt=""></img>
       <input
-        class="form-control search-input"
+        class=" search-input"
         type="text"
         placeholder={
           props.screenSize === screenSizes.MOBILE ||
           props.screenSize === screenSizes.TABLET
-            ? "Search"
-            : 'Search "svg","cut design",etc...'
+            ? "   Search"
+            : '   Search "svg","cut design",etc...'
         }
         onClick={handleClick}
         aria-label="Search"

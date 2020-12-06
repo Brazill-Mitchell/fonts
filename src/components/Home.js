@@ -55,8 +55,8 @@ function Home(props) {
       <Nav />
       {/* Mobile Menu & SearchBar */}
       {props.screenSize === screenSizes.MOBILE ? (
-        <div className="menu-and-searchbar">
-          <div className="menu-mobile ml-2">
+        <div className={isScrolling ? "menu-and-searchbar-scrolling" : "menu-and-searchbar"}>
+          <div className="menu-mobile ml-4">
             <Menu />
           </div>
           <div className="searchbar-mobile">

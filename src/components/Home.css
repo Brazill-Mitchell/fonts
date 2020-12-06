@@ -1,4 +1,4 @@
-.menu-and-searchbar{
+.menu-and-searchbar,.menu-and-searchbar-scrolling{
     position: sticky;
     padding-top: 10px;
     top: 0;
@@ -7,6 +7,14 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    transition: .2s all ease-in-out;
+    -webkit-transition: .2s all ease-in-out;
+    -moz-transition: .2s all ease-in-out;
+    -ms-transition: .2s all ease-in-out;
+    -o-transition: .2s all ease-in-out;
+}
+.menu-and-searchbar-scrolling{
+    padding-top: 20px;
 }
 .menu-mobile{
     position: fixed;
@@ -15,7 +23,7 @@
 }
 .searchbar-mobile{
     align-self: center;
-    width: 80vw;
+    width: 70vw;
 }
 
 .products-area{
@@ -199,12 +207,12 @@
         justify-content: center;
     }
     .product{
-        flex: 1 0 40%;
-        max-width: 40%;
+        flex: 1 0 45%;
+        max-width: 45%;
     }        
     .product-image{
-        width: 30vw;
-        height: 30vw;
+        width: 35vw;
+        height: 35vw;
     }
 } 
 @media only screen and (min-width: 700px) {
