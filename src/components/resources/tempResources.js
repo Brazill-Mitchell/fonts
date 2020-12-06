@@ -3,6 +3,7 @@ import culogo from "./culogo.svg"
 import expand from "./expand.svg"
 import fontSize from "./fontSize.svg"
 import shoppingCart from "./shoppingCart.svg"
+import shoppingCartYellow from "./shoppingCartYellow.svg"
 import tree from "./tree.svg"
 import img1 from "./fillImages/img1.jpg"
 import img2 from "./fillImages/img2.jpg"
@@ -82,4 +83,5 @@ export const culogoImg = culogo
 export const expandImg = expand
 export const fontSizeImg = fontSize
 export const shoppingCartImg = shoppingCart
+export const shoppingCartYellowImg = shoppingCartYellow
 export const treeImg = tree

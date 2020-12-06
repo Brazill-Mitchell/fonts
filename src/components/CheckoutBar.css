@@ -6,7 +6,8 @@
     flex-direction: row;
     justify-content: center;
     background-color: black;
-    color: orange;
+    color: #FABF33;
+    padding: 10px 0;
 }
 .count-and-cart{
     display: flex;
@@ -15,15 +16,15 @@
     flex: 0 0 30%;
 }
 .checkout-bar-item-count{
-    margin-bottom: 10px;
+    font-size: x-large;
 }
 .checkout-bar-image{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 .checkout-bar-title{
     align-self: center;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     flex: 0 0 30%;
 }
