@@ -1,3 +1,21 @@
+.menu-and-searchbar{
+    position: sticky;
+    top: 10px;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.menu-mobile{
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+}
+.searchbar-mobile{
+    align-self: center;
+    width: 80vw;
+}
+
 .products-area{
     flex: 1 0 60%;
     align-items: center;

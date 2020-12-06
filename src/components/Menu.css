@@ -13,7 +13,7 @@
 
 .menu-icon{
     position: absolute;
-    top: 5%;
+    /* top: 5%; */
     /* right: 0; */
     z-index: 100;
     cursor: pointer;
@@ -65,7 +65,7 @@
 
 @media screen and (max-width: 500px){
     .menu{
-        margin-top: 20px;
+        /* margin-top: 20px; */
     }
 }
 @media screen and (max-width: 700px){

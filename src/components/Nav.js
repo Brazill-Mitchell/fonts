@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { screenSizes } from "../responsive.js";
 import "./Nav.css";
 import SearchBar from "./SearchBar.js";
+import Menu from "./Menu.js";
 import { culogoImg, shoppingCartImg } from "./resources/tempResources";
 
 function Nav(props) {
@@ -50,30 +51,26 @@ function Nav(props) {
             </div>
           </Link>
         </div>
-      ) : ( //Mobile
+      ) : (
+
+        //Mobile
         <div className="container-fluid navbar w-100">
+          <div className="guest-name-mobile">Guest</div>
           <Link to="">
-            <div className="logo-home">
+            <div className="logo-home-mobile">
               <img className="img" src={culogoImg} alt=""></img>
             </div>
           </Link>
-          <div className="guest-name">Guest</div>
-          <Link to="">
-            <span>Register</span>
-          </Link>
-          <SearchBar />
-          <Link to="">
-            <img className="cart-img" src={shoppingCartImg} alt=""></img>
-          </Link>
-          {
-            props.screenSize !== screenSizes.MOBILE
-              ? <Link to="">
-              <span className='register'>Register</span>
-            </Link>
-            : []
-          }
-          
-          
+
+
+          <div className='position-absolute'>
+          {/* <div className='sticky-top'><SearchBar /></div> */}
+          </div>
+
+          {/* Cart */}
+          {/* <Link to="">
+              <img className="cart-img" src={shoppingCartImg} alt=""></img>
+            </Link> */}
         </div>
       )}
     </div>

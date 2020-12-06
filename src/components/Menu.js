@@ -30,7 +30,7 @@ function Menu(props) {
       style={
         props.screenSize !== screenSizes.MOBILE
           ? { top: `${props.navHeight}px`, position: "sticky" }
-          : { top: `${props.navHeight / 2}px`, position: "absolute" }
+          : { top: "0" }
       }
     >
       <div
@@ -39,15 +39,15 @@ function Menu(props) {
             ? isMenuShown
               ? "menu bg-white"
               : "menu"
-            : " container menu"
+            : "container menu"
         }
         style={{
           top:
             props.screenSize !== screenSizes.MOBILE
               ? `${props.navHeight}px`
-              : `${props.navHeight / 1.5}px`,
+              : "0",
           position: `${
-            props.screenSize !== screenSizes.MOBILE ? "sticky" : "fixed"
+            props.screenSize !== screenSizes.MOBILE ? "sticky" : "absolute"
           }`,
         }}
       >

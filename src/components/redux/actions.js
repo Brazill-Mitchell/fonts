@@ -18,3 +18,8 @@ export const setCurrentSection = section =>({
     type: 'CURRENT_SECTION',
     section: section
 })
+export const SET_CHECKOUT_COUNT = 'SET_CHECKOUT_COUNT'
+export const setCheckoutCount = count =>({
+    type: 'SET_CHECKOUT_COUNT',
+    count: count
+})

@@ -10,7 +10,7 @@ function SearchBar(props) {
   return (
     <div
       id="search-container"
-      className="mt-2"
+      className={props.screenSize !== screenSizes.MOBILE ? "mt-2" : ""}
       style={
         props.screenSize !== screenSizes.MOBILE
           ? { flex: "0 0 40%" }

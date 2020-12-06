@@ -1,0 +1,29 @@
+.checkout-bar{
+    position: sticky;
+    height: fit-content;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    color: orange;
+}
+.count-and-cart{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex: 0 0 30%;
+}
+.checkout-bar-item-count{
+    margin-bottom: 10px;
+}
+.checkout-bar-image{
+    width: 70px;
+    height: 70px;
+}
+.checkout-bar-title{
+    align-self: center;
+    text-align: center;
+    font-size: x-large;
+    flex: 0 0 30%;
+}
