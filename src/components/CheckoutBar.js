@@ -8,15 +8,17 @@ import "./CheckoutBar.css";
 
 function Home(props) {
   return (
-    <div className="checkout-bar container-fluid w-100">
+    <div className="checkout-bar-container container-fluid w-100">
       <Link to="">
-        <div className="count-and-cart">
-          <div className="checkout-bar-item-count">{props.checkoutCount}</div>
-          <div className="checkout-bar-image">
-            <img className="img" src={shoppingCartYellowImg} alt=""></img>
+        <div className="checkout-bar ">
+          <div className="count-and-cart">
+            <div className="checkout-bar-item-count">{props.checkoutCount}</div>
+            <div className="checkout-bar-image">
+              <img className="img" src={shoppingCartYellowImg} alt=""></img>
+            </div>
           </div>
+          <div className="checkout-bar-title">Checkout</div>
         </div>
-        <div className="checkout-bar-title">Checkout</div>
       </Link>
     </div>
   );

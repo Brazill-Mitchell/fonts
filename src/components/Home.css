@@ -1,7 +1,13 @@
-.menu-and-searchbar,.menu-and-searchbar-scrolling{
+.menu-and-search-container{
     position: sticky;
-    padding-top: 10px;
     top: 0;
+    background-color: darkgoldenrod;
+    margin-bottom: 10vh;
+}
+.menu-and-searchbar,.menu-and-searchbar-scrolling{
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100vw;
     height: fit-content;
     display: flex;
@@ -16,10 +22,18 @@
 .menu-and-searchbar-scrolling{
     padding-top: 20px;
 }
-.menu-mobile{
+.menu-mobile,.menu-mobile-scrolling{
     position: fixed;
-    top: 10px;
+    top: 5px;
     z-index: 1000;
+    transition: .2s all ease-in-out;
+    -webkit-transition: .2s all ease-in-out;
+    -moz-transition: .2s all ease-in-out;
+    -ms-transition: .2s all ease-in-out;
+    -o-transition: .2s all ease-in-out;
+}
+.menu-mobile-scrolling{
+    padding-top: 10px;
 }
 .searchbar-mobile{
     align-self: center;

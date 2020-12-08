@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { connect } from "react-redux";
 import { screenSizes } from "../responsive.js";
 import { setCurrentSection } from "./redux/actions";
@@ -17,50 +17,74 @@ import {
 } from "./resources/tempResources";
 
 function Home(props) {
-  const [isScrolling, setIsScrolling] = useState(false);
+  const [isScrolling, _setIsScrolling] = useState(false);
 
   // Scroll Shadow Animation
-  // let last_known_scroll_position = 0;
+  const refIsScrolling = useRef(isScrolling);
+  const setIsScrolling = (value) => {
+    refIsScrolling.current = value;
+    _setIsScrolling(value);
+  };
 
-  // function doSomething(scroll_pos) {
-  //  console.log(last_known_scroll_position)
-  // }
-
-  let scrollTimer = null;
+  const timerRef = useRef(null);
 
   document.addEventListener(
     "scroll",
     function (e) {
       // last_known_scroll_position = window.scrollY;
 
-      if (!isScrolling) {
-        window.requestAnimationFrame(function () {
-          // doSomething(last_known_scroll_position);
-          setIsScrolling(true);
-        });
-        if (scrollTimer !== null) {
-          clearTimeout(scrollTimer);
+      if (!refIsScrolling.current) {
+        // console.log("initial scroll");
+        try{
+          if (refMenuAndSearch.current.getBoundingClientRect().y === 0){
+            setIsScrolling(true)
+          }
+        }
+        catch(e){
+          // console.log(e)
+        }
+      } else {
+        if (timerRef.current !== null) {
+          clearTimeout(timerRef.current);
         }
 
-        scrollTimer = setTimeout(() => {
+        timerRef.current = setTimeout(() => {
           setIsScrolling(false);
-        }, 10);
+        }, 300);
       }
     },
     false
   );
+
+  // scroll effect only when search is at top
+  const refMenuAndSearch = useRef(null)
+  function test(){
+    console.log(refMenuAndSearch.current.getBoundingClientRect().y)
+  }
 
   return (
     <div>
       <Nav />
       {/* Mobile Menu & SearchBar */}
       {props.screenSize === screenSizes.MOBILE ? (
-        <div className={isScrolling ? "menu-and-searchbar-scrolling" : "menu-and-searchbar"}>
-          <div className="menu-mobile ml-4">
-            <Menu />
-          </div>
-          <div className="searchbar-mobile">
-            <SearchBar />
+        <div ref={refMenuAndSearch} className="menu-and-search-container">
+          <div
+            className={
+              isScrolling
+                ? "menu-and-searchbar-scrolling"
+                : "menu-and-searchbar"
+            }
+          >
+            <div
+              className={
+                isScrolling ? "menu-mobile-scrolling ml-4" : "menu-mobile ml-4"
+              }
+            >
+              <Menu />
+            </div>
+            <div onClick={test} className="searchbar-mobile">
+              <SearchBar />
+            </div>
           </div>
         </div>
       ) : (
