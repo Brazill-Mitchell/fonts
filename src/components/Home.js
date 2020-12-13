@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { connect } from "react-redux";
 import { screenSizes } from "../responsive.js";
 import { setCurrentSection } from "./redux/actions";
@@ -17,6 +17,33 @@ import {
 } from "./resources/tempResources";
 
 function Home(props) {
+
+  // "Featured Sections" start position
+  const refFontImage = useRef(null);
+  const refFeaturedContainer = useRef(null);
+
+  const [sectionsTitleHeight, setSectionsTitleHeight] = useState(0);
+
+  // calculate which height is greater and return the greater one
+  function getGreaterHeight(fontSectionHeight, sectionOptionHeight) {
+    setSectionsTitleHeight(Math.max(fontSectionHeight, sectionOptionHeight))
+  }
+
+    // update 
+    window.addEventListener("resize",handleTitleFeaturePos())
+    function handleTitleFeaturePos(){
+      console.log('resized')
+      try{
+        if(sectionsTitleHeight !== refFontImage.current.clientHeight && sectionsTitleHeight !== refFeaturedContainer.current.clientHeight){
+          getGreaterHeight(refFontImage.current.clientHeight, refFeaturedContainer.current.clientHeight);
+
+        }
+      }
+      catch(e){
+        console.log(e)
+      }
+    }
+
   const [isScrolling, _setIsScrolling] = useState(false);
 
   // Scroll Shadow Animation
@@ -35,12 +62,11 @@ function Home(props) {
 
       if (!refIsScrolling.current) {
         // console.log("initial scroll");
-        try{
-          if (refMenuAndSearch.current.getBoundingClientRect().y === 0){
-            setIsScrolling(true)
+        try {
+          if (refMenuAndSearch.current.getBoundingClientRect().y === 0) {
+            setIsScrolling(true);
           }
-        }
-        catch(e){
+        } catch (e) {
           // console.log(e)
         }
       } else {
@@ -57,9 +83,9 @@ function Home(props) {
   );
 
   // scroll effect only when search is at top
-  const refMenuAndSearch = useRef(null)
-  function test(){
-    console.log(refMenuAndSearch.current.getBoundingClientRect().y)
+  const refMenuAndSearch = useRef(null);
+  function test() {
+    console.log(refMenuAndSearch.current.getBoundingClientRect().y);
   }
 
   return (
@@ -114,17 +140,7 @@ function Home(props) {
               }
             >
               <div className="featured-sections">
-                <small
-                  id="title-featured"
-                  className="text-muted font-weight-bold"
-                  style={{
-                    pointerEvents: "none",
-                    marginLeft: "50px",
-                  }}
-                >
-                  Featured Sections
-                </small>
-                <div className="container-fluid section-select mt-2">
+                <div ref={refFeaturedContainer} className="container-fluid section-select mt-2">
                   <div
                     className={
                       props.currentSection === "fonts"
@@ -135,12 +151,29 @@ function Home(props) {
                       props.setCurrentSection("fonts");
                     }}
                   >
-                    <Link to="">
-                      <div className="d-flex flex-row">
-                        <img className="section-img" src={fontSizeImg} alt="" />
-                        <div className="section-title">Fonts</div>
-                      </div>
-                    </Link>
+                    <div className="section-first-item">
+                      <small
+                        id="title-featured"
+                        className="text-muted "
+                        style={{
+                          pointerEvents: "none",
+                          bottom: `${sectionsTitleHeight}px`,
+                        }}
+                      >
+                        Featured Sections
+                      </small>
+                      <Link to="">
+                        <div className="d-flex flex-row">
+                          <img
+                            ref={refFontImage}
+                            className="section-img"
+                            src={fontSizeImg}
+                            alt=""
+                          />
+                          <div className="section-title">Fonts</div>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                   <div
                     className={
