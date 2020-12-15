@@ -17,32 +17,54 @@ import {
 } from "./resources/tempResources";
 
 function Home(props) {
-
-  // "Featured Sections" start position
+  
+  // determine where to position "Featued Sections" based on whether items are wrapped
   const refFontImage = useRef(null);
   const refFeaturedContainer = useRef(null);
 
   const [sectionsTitleHeight, setSectionsTitleHeight] = useState(0);
+  // const [temp, setTemp] = useState(0);
+  // const [temp2, setTemp2] = useState(0);
+  // const [temp3, setTemp3] = useState(0);
 
-  // calculate which height is greater and return the greater one
-  function getGreaterHeight(fontSectionHeight, sectionOptionHeight) {
-    setSectionsTitleHeight(Math.max(fontSectionHeight, sectionOptionHeight))
-  }
+  // let count = 0
+  // update
+  // window.onResize = console.log('resized')
+  window.addEventListener("resize", handleTitleFeaturePos());
+  function handleTitleFeaturePos() {
+    // console.log('resized: ' + ++count)
+    try {
+      const fontSectionHeight = refFontImage.current.clientHeight;
+      const sectionOptionHeight = refFeaturedContainer.current.clientHeight;
+      const diff = sectionOptionHeight - fontSectionHeight;
 
-    // update 
-    window.addEventListener("resize",handleTitleFeaturePos())
-    function handleTitleFeaturePos(){
-      console.log('resized')
-      try{
-        if(sectionsTitleHeight !== refFontImage.current.clientHeight && sectionsTitleHeight !== refFeaturedContainer.current.clientHeight){
-          getGreaterHeight(refFontImage.current.clientHeight, refFeaturedContainer.current.clientHeight);
-
-        }
+      if (
+        diff >= fontSectionHeight * 2 &&
+        sectionsTitleHeight !== sectionOptionHeight
+      ) {
+        setSectionsTitleHeight(sectionOptionHeight);
+      //   setTemp(fontSectionHeight);
+      // setTemp2(sectionOptionHeight);
+      // setTemp3(diff)
+      // console.log('resize to sectionOption height')
+      } else if (
+        diff <= fontSectionHeight * 2 &&
+        sectionsTitleHeight !== fontSectionHeight
+      ) {
+        setSectionsTitleHeight(fontSectionHeight);
+      //   setTemp(fontSectionHeight);
+      // setTemp2(sectionOptionHeight);
+      // setTemp3(diff)
+      // console.log('resize to fontSection height')
       }
-      catch(e){
-        console.log(e)
-      }
+      // if(sectionsTitleHeight !== refFontImage.current.clientHeight && sectionsTitleHeight !== refFeaturedContainer.current.clientHeight){
+      //   getSectionHeight(refFontImage.current.clientHeight, refFeaturedContainer.current.clientHeight);
+
+      // }
+    } catch (e) {
+      console.log(e);
     }
+  }
 
   const [isScrolling, _setIsScrolling] = useState(false);
 
@@ -84,13 +106,14 @@ function Home(props) {
 
   // scroll effect only when search is at top
   const refMenuAndSearch = useRef(null);
-  function test() {
-    console.log(refMenuAndSearch.current.getBoundingClientRect().y);
-  }
 
   return (
     <div>
       <Nav />
+      {/* <div>FontImage: {temp}</div>
+      <div>sectionOptionHeight: {temp2}</div>
+      <div>Diff: {temp3}</div>
+      <div>SectionTitleHeight: {sectionsTitleHeight}</div> */}
       {/* Mobile Menu & SearchBar */}
       {props.screenSize === screenSizes.MOBILE ? (
         <div ref={refMenuAndSearch} className="menu-and-search-container">
@@ -124,6 +147,8 @@ function Home(props) {
           {/* featured sections */}
           {props.screenSize !== screenSizes.MOBILE ? (
             <div
+            ref={refFeaturedContainer}
+
               className={
                 props.screenSize !== screenSizes.MOBILE
                   ? isScrolling
@@ -140,7 +165,9 @@ function Home(props) {
               }
             >
               <div className="featured-sections">
-                <div ref={refFeaturedContainer} className="container-fluid section-select mt-2">
+                <div
+                  className="container-fluid section-select mt-2"
+                >
                   <div
                     className={
                       props.currentSection === "fonts"
